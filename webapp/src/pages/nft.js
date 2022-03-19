@@ -2,7 +2,7 @@ import { Contract, providers, utils } from "ethers";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
-import { abi, NFT_CONTRACT_ADDRESS } from "../constants";
+import { NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS } from "../constants";
 import styles from "../styles/Home.module.css";
 
 export default function NFT() {
@@ -32,7 +32,7 @@ export default function NFT() {
       // update methods
       const whitelistContract = new Contract(
         NFT_CONTRACT_ADDRESS,
-        abi,
+        NFT_CONTRACT_ABI,
         signer
       );
       // call the presaleMint from the contract, only whitelisted addresses would be able to mint
