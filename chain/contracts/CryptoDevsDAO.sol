@@ -25,8 +25,8 @@ contract CryptoDevsDAO is Ownable {
   }
 
 
-  mapping(uint256 => Proposal) proposals;
-  uint256 numProposals;
+  mapping(uint256 => Proposal) public proposals;
+  uint256 public numProposals;
 
   constructor(address _nft, address _market) payable {
     nftMarketplace = IFakeNFTMarketplace(_market);
